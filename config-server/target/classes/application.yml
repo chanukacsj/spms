@@ -8,11 +8,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/nimashashehani123/spms-config-repo
+          uri: https://github.com/chanukacsj/spms-config-repo-.git
           default-label: main
-#          clone-on-start: true
-          username: nimashashehani123
-          password: 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
+          username: chanukacsj
+          password: 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
 
 
 eureka:

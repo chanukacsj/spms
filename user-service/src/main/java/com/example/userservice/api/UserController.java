@@ -36,6 +36,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<ResponseDTO> registerUser(@RequestBody UserDTO userDTO) {
+        System.out.println(userDTO+" user");
         try {
             int res = userService.registerUser(userDTO);
                 switch (res) {

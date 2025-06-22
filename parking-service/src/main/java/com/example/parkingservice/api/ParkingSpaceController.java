@@ -15,7 +15,8 @@ public class ParkingSpaceController {
     @Autowired
     private ParkingSpaceService service;
 
-    @PostMapping
+
+    @PostMapping("/add")
     public ParkingSpace addSpace(@RequestBody ParkingSpaceDTO dto) {
         return service.addSpace(dto);
     }
