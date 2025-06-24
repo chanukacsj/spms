@@ -17,7 +17,8 @@ public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
 
-    @PostMapping
+
+    @PostMapping("/add")
     public Vehicle addVehicle(@RequestBody VehicleDTO dto) {
         return vehicleService.addVehicle(dto);
     }
