@@ -15,7 +15,8 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @PostMapping
+
+    @PostMapping("/create")
     public Reservation create(@RequestBody ReservationDTO dto) {
         return reservationService.createReservation(dto);
     }
@@ -25,7 +26,7 @@ public class ReservationController {
         return reservationService.getReservationsByUser(userId);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Reservation> getAll() {
         return reservationService.getAllReservations();
     }
