@@ -34,7 +34,11 @@ The **Smart Parking Management System (SPMS)** is a microservice-based applicati
 | Postman                 | API testing                           |
 
 ---
+## 📄 Resources
 
+![eureka_dashboard](https://github.com/user-attachments/assets/953b26ef-0af1-4269-88f8-a23074b5b394)
+
+---
 ## 🧩 Microservices Architecture
 
 - 🧾 **Config Server** – Centralized config management  
