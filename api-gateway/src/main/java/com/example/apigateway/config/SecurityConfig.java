@@ -26,7 +26,14 @@ public class SecurityConfig {
                                 "/api/v1/users/register"
                         ).permitAll()
                         .pathMatchers("/api/v1/vehicles/user/**").hasRole("USER")
-                        .pathMatchers("/api/v1/users/all").hasRole("USER")
+                        .pathMatchers("/api/v1/vehicles/all").hasRole("OWNER")
+                        .pathMatchers("/api/v1/reservations/user/**").hasRole("USER")
+                        .pathMatchers("/api/v1/payments/user/**").hasRole("USER")
+                        .pathMatchers("/api/v1/reservations/all").hasRole("OWNER")
+                        .pathMatchers("/api/v1/payments/all").hasRole("OWNER")
+                        .pathMatchers("/api/v1/reservations/create").hasRole("USER")
+                        .pathMatchers("/api/v1/payments/create").hasRole("USER")
+                        .pathMatchers("/api/v1/users/all").hasRole("OWNER")
                         .pathMatchers("/api/v1/vehicles/**").hasRole("OWNER")
                         .anyExchange().authenticated()
 
