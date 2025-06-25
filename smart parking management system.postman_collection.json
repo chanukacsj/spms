@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "0e27260a-10ee-4a90-acfe-9df327868b39",
+		"name": "smart parking system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42483061"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/users/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kasun\",\r\n    \"email\":\"kaun@gmail.com\",\r\n    \"password\":\"1221kasun\",\r\n    \"role\":\"OWNER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "chanuka",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "chanucsj@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1221chanuka",
+							"disabled": true
+						},
+						{
+							"key": "role",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"danushaka@gmail.com\",\r\n    \"password\":\"1221kasun\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ownerId\": 6,\r\n  \"location\": \"GALLE\",\r\n  \"status\": \"AVAILABLE\",\r\n  \"zone\": \"C3\",\r\n  \"pricePerHour\": 250.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ownerId\": 6,\r\n  \"location\": \"GALLE\",\r\n  \"available\": true,\r\n  \"zone\": \"C3\",\r\n  \"pricePerHour\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/available",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/reserve",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/reserve/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"reserve",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/parkings/release",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parkings/release/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parkings",
+						"release",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/reservations/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"vehicleId\": 1,\r\n  \"parkingId\": 4,\r\n  \"startTime\": \"2025-06-24T10:00:00\",\r\n  \"endTime\": \"2025-06-24T12:00:00\",\r\n  \"status\": \"BOOKED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reservations/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/reservations/getByUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6InZpbmlhQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1ODc0NSwiZXhwIjoxNzUwODAxOTQ1fQ.Gq1lTpQTq-l44YdaQAuGtkerH6RYuGI_4Jk_yrl5p5shfhW93QybaXS4nPzNFGi90_omlNtZVte8iL_XF6dA2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"vehicleId\": 1,\r\n  \"parkingId\": 4,\r\n  \"startTime\": \"2025-06-24T10:00:00\",\r\n  \"endTime\": \"2025-06-24T12:00:00\",\r\n  \"status\": \"BOOKED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reservations/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/reservations/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJ2aW5pYUBnbWFpbC5jb20iLCJpYXQiOjE3NTA3NjIxODYsImV4cCI6MTc1MDgwNTM4Nn0.Vz63TsR3iFv-WveMy_vOlzFirWdUZe2yVZ1oxUTderitHg-4_GjJM5x1Pgi9hkJOOtwb1BtArR5JfmFEy4Nezg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"vehicleId\": 1,\r\n  \"parkingId\": 4,\r\n  \"startTime\": \"2025-06-24T10:00:00\",\r\n  \"endTime\": \"2025-06-24T12:00:00\",\r\n  \"status\": \"BOOKED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reservations/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/reservations/user/{userId}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImNoYW51Y3NqQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMjUxMSwiZXhwIjoxNzUwODU1NzExfQ.rfr-dHEtvYHcLyQgBz0KyMehs0wMUBv01Iua9jR6arLH8qoUtL7CYME7FpNy-GSmNtH2y3XBOQNrQjlU_Xnz3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"vehicleId\": 1,\r\n  \"parkingId\": 4,\r\n  \"startTime\": \"2025-06-24T10:00:00\",\r\n  \"endTime\": \"2025-06-24T12:00:00\",\r\n  \"status\": \"BOOKED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reservations/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/payments/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImNoYW51Y3NqQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMjUxMSwiZXhwIjoxNzUwODU1NzExfQ.rfr-dHEtvYHcLyQgBz0KyMehs0wMUBv01Iua9jR6arLH8qoUtL7CYME7FpNy-GSmNtH2y3XBOQNrQjlU_Xnz3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"reservationId\": 1,\r\n  \"amount\": 200,\r\n  \"status\": \"Success\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/payments/user/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImNoYW51Y3NqQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMjUxMSwiZXhwIjoxNzUwODU1NzExfQ.rfr-dHEtvYHcLyQgBz0KyMehs0wMUBv01Iua9jR6arLH8qoUtL7CYME7FpNy-GSmNtH2y3XBOQNrQjlU_Xnz3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"reservationId\": 1,\r\n  \"amount\": 200,\r\n  \"status\": \"Success\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/payments/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMzcyMywiZXhwIjoxNzUwODU2OTIzfQ.0ZoiFwvcmEp6VN3hAD2CDJoIpKYpauUK7WA0k_kuEmapTQTkEjVA9qkMy8nO0TMcoGG3ri8Wz4GPBqprfL75Ow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/payments/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMzcyMywiZXhwIjoxNzUwODU2OTIzfQ.0ZoiFwvcmEp6VN3hAD2CDJoIpKYpauUK7WA0k_kuEmapTQTkEjVA9qkMy8nO0TMcoGG3ri8Wz4GPBqprfL75Ow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vehicles/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMzcyMywiZXhwIjoxNzUwODU2OTIzfQ.0ZoiFwvcmEp6VN3hAD2CDJoIpKYpauUK7WA0k_kuEmapTQTkEjVA9qkMy8nO0TMcoGG3ri8Wz4GPBqprfL75Ow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 5,\r\n  \"plateNumber\": \"CAD-2345\",\r\n  \"model\": \"CHR\",\r\n  \"color\": \"White\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vehicles/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vehicles/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxMzcyMywiZXhwIjoxNzUwODU2OTIzfQ.0ZoiFwvcmEp6VN3hAD2CDJoIpKYpauUK7WA0k_kuEmapTQTkEjVA9qkMy8nO0TMcoGG3ri8Wz4GPBqprfL75Ow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 5,\r\n  \"plateNumber\": \"CAD-2345\",\r\n  \"model\": \"CHR\",\r\n  \"color\": \"White\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vehicles/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vehicles/user/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImNoYW51Y3NqQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxNDI2NSwiZXhwIjoxNzUwODU3NDY1fQ.Zisd0XOI4K9Y_Xvj_KsUGpfR70fM8INd6m8hA70_1yo3-3ts52kaar0bQSkvKbm9iyPWCF3YrxuNhi6D713i4A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 5,\r\n  \"plateNumber\": \"CAD-2345\",\r\n  \"model\": \"CHR\",\r\n  \"color\": \"White\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vehicles/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vehicles/update/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxNDc5NywiZXhwIjoxNzUwODU3OTk3fQ.fFVL04nAPcyphmCay0R-QBF2Q7kYZI01ScB03Q8fg9aUXeVYYfjfk8LuKlROuSU8Rfy67ZgJoHXtZZxBO6kzpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"plateNumber\": \"CAR-2345\",\r\n  \"model\": \"Toyota prius\",\r\n  \"color\": \"White\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vehicles/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vehicles/delete/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiT1dORVIiLCJzdWIiOiJrYXVuQGdtYWlsLmNvbSIsImlhdCI6MTc1MDgxNDc5NywiZXhwIjoxNzUwODU3OTk3fQ.fFVL04nAPcyphmCay0R-QBF2Q7kYZI01ScB03Q8fg9aUXeVYYfjfk8LuKlROuSU8Rfy67ZgJoHXtZZxBO6kzpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"plateNumber\": \"CAR-2345\",\r\n  \"model\": \"Toyota prius\",\r\n  \"color\": \"White\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vehicles/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
