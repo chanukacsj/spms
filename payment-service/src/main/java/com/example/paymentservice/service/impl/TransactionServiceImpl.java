@@ -24,9 +24,22 @@ public class TransactionServiceImpl implements TransactionService {
         t.setStatus(dto.getStatus());
         return repository.save(t);
     }
-
+    @Override
+    public Transaction getPaymentById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
     @Override
     public List<Transaction> getUserTransactions(Long userId) {
         return repository.findByUserId(userId);
+    }
+
+    @Override
+    public List<Transaction> getAllPayments() {
+        return repository.findAll();
+    }
+
+    @Override
+    public List<Transaction> getPaymentsByUserId(Long userId) {
+        return repository.findByUserId(Long.valueOf(userId));
     }
 }
