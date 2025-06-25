@@ -74,7 +74,7 @@ The **Smart Parking Management System (SPMS)** is a microservice-based applicati
    - `parking-service`
    - `payment-service`
 
-3. Import `SPMS-Postman-Collection.json` into Postman
+3. Import `smart parking management system.postman_collection.json` into Postman
 
 4. Use Postman to test the APIs (`register`, `login`, `add vehicle`, `reserve parking`, `make payment`, etc.)
 
