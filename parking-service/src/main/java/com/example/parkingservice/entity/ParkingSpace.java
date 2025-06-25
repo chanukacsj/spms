@@ -19,7 +19,7 @@ public class ParkingSpace {
     private Long ownerId; // user_id
 
     private String location;
-    private String status; // available / occupied
+    private boolean available;
     private String zone;
     private Double pricePerHour;
 
