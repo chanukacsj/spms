@@ -62,6 +62,7 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<ResponseDTO> authenticate(@RequestBody UserDTO userDTO ,HttpServletRequest request) {
+        System.out.println("login request: " + userDTO);
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));
@@ -77,7 +78,7 @@ public class UserController {
         }
 
 // ✅ Use loadedUser (has role) instead of userDTO
-        System.out.println(loadedUser);
+        System.out.println("token up"+loadedUser);
         String token = jwtUtil.generateToken(loadedUser);
 
         if (token == null || token.isEmpty()) {
@@ -111,6 +112,7 @@ public class UserController {
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER')")
     public List<User> getAllUsers(HttpServletRequest request) {
+        System.out.println("Fetching all users");
         String authHeader = request.getHeader("Authorization");
         System.out.println("User-Service received Authorization header: " + authHeader);
         return userService.getAllUsers();
