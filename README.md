@@ -98,7 +98,7 @@ The **Smart Parking Management System (SPMS)** is a microservice-based applicati
 **Chanu csj**  
 Graduate Diploma in Software Engineering – IJSE  
 📧 Email: [chanucsj@gmail.com]  
-🔗 GitHub: [github.com/your-username](https://github.com/chanucsj)
+🔗 GitHub: (https://github.com/chanukacsj)
 
 ---
 
