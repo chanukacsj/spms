@@ -34,4 +34,22 @@ public class VehicleServiceImpl implements VehicleService {
     public List<Vehicle> getVehiclesByUserId(Long userId) {
         return vehicleRepository.findByUserId(userId);
     }
+
+    @Override
+    public Vehicle updateVehicle(Long vehicleId, VehicleDTO dto) {
+        Vehicle existingVehicle = vehicleRepository.findById(Long.valueOf(vehicleId))
+                .orElseThrow(() -> new RuntimeException("Vehicle not found with ID: " + vehicleId));
+
+        existingVehicle.setPlateNumber(dto.getPlateNumber());
+        existingVehicle.setModel(dto.getModel());
+        existingVehicle.setColor(dto.getColor());
+        existingVehicle.setUserId(dto.getUserId());
+
+        return vehicleRepository.save(existingVehicle);
+    }
+
+    @Override
+    public void deleteVehicle(Long vehicleId) {
+        vehicleRepository.deleteById(Long.valueOf(vehicleId));
+    }
 }
