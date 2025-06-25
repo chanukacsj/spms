@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import io.jsonwebtoken.security.Keys;
+
+import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Base64;
 import java.util.function.Function;
@@ -27,17 +29,20 @@ public class JwtUtil {
     public static final long JWT_TOKEN_VALIDITY = 12 * 60 * 60; // 12 hours in seconds
 
     public Key getSigningKey() {
+        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+        String base64Key = Base64.getEncoder().encodeToString(key.getEncoded());
+        System.out.println("Base64 encoded 512-bit key: " + base64Key);
         return Keys.hmacShaKeyFor(Base64.getDecoder().decode(secret));
     }
 
-
-
     public String generateToken(UserDTO userDTO) {
+        System.out.println("jwt secret :"+secret);
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", userDTO.getRole()); // ✅ Add this line to include role
         return doGenerateToken(claims, userDTO.getEmail());
     }
     public String doGenerateToken(Map<String, Object> claims, String subject) {
+        System.out.println("Generating token for subject: " + subject);
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
